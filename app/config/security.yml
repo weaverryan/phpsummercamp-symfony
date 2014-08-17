@@ -14,11 +14,11 @@ security:
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
-        demo_secured_area:
+        secured_area:
             pattern:    ^/
             anonymous: ~
             http_basic:
-                realm: "Secured Demo Area"
+                realm: "Secured Area"
 
             # To use form login, see the "Login Form" section of the Symfony docs
             #form_login:
