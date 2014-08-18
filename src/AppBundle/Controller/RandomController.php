@@ -16,8 +16,6 @@ class RandomController extends Controller
         $generator = $this->container->get('random_generator');
         $string = $generator->generateString($limit);
 
-        $this->container->get('logger')->info('Random string is: '.$string);
-
         return $this->render('Random/index.html.twig', array(
             'string' => $string
         ));
