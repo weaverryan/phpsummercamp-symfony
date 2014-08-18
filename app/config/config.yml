@@ -5,6 +5,7 @@ imports:
 services:
     random_generator:
         class: AppBundle\Service\RandomGenerator
+        arguments: ["@logger"]
 
 framework:
     #esi:             ~

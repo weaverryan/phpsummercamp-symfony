@@ -4,6 +4,13 @@ namespace AppBundle\Service;
 
 class RandomGenerator
 {
+    private $logger;
+
+    public function __construct($logger)
+    {
+        $this->logger = $logger;
+    }
+
     public function generateString($length)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -12,7 +19,7 @@ class RandomGenerator
             $randomString .= $characters[rand(0, strlen($characters) - 1)];
         }
 
-        $this->container->get('logger')->info('Random string is: '.$randomString);
+        $this->logger->info('Random string is: '.$randomString);
 
         return $randomString;
     }
