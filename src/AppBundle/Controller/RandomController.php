@@ -2,16 +2,20 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-class RandomController
+class RandomController extends Controller
 {
     /**
      * @Route("/random/{limit}")
      */
     public function indexAction($limit)
     {
-        return new Response('<html><body>Number: '.rand(1, $limit).'</body></html>');
+        $number = rand(1, $limit);
+
+        return $this->render('AppBundle:Random:index.html.twig', array(
+            'number' => $number
+        ));
     }
 }
