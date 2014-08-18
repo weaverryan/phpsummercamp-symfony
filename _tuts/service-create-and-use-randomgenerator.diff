@@ -1,0 +1,59 @@
+diff --git a/app/Resources/views/Random/index.html.twig b/app/Resources/views/Random/index.html.twig
+index fe62fbd..9043a9c 100644
+--- a/app/Resources/views/Random/index.html.twig
++++ b/app/Resources/views/Random/index.html.twig
+@@ -3,5 +3,5 @@
+ {% block title %}Randomness!{% endblock %}
+ 
+ {% block body %}
+-    <h1>Number: {{ number }}</h1>
++    <h1>Random String: {{ string }}</h1>
+ {% endblock %}
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index 91facff..72b4d40 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -2,6 +2,7 @@
+ 
+ namespace AppBundle\Controller;
+ 
++use AppBundle\Service\RandomGenerator;
+ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+ use Symfony\Component\Routing\Annotation\Route;
+ 
+@@ -12,10 +13,11 @@ class RandomController extends Controller
+      */
+     public function indexAction($limit)
+     {
+-        $number = rand(1, $limit);
++        $generator = new RandomGenerator();
++        $string = $generator->generateString($limit);
+ 
+         return $this->render('Random/index.html.twig', array(
+-            'number' => $number
++            'string' => $string
+         ));
+     }
+ }
+diff --git a/src/AppBundle/Service/RandomGenerator.php b/src/AppBundle/Service/RandomGenerator.php
+new file mode 100644
+index 0000000..6298dd6
+--- /dev/null
++++ b/src/AppBundle/Service/RandomGenerator.php
+@@ -0,0 +1,16 @@
++<?php
++
++namespace AppBundle\Service;
++
++class RandomGenerator
++{
++    public function generateString($length)
++    {
++        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
++        $randomString = '';
++        for ($i = 0; $i < $length; $i++) {
++            $randomString .= $characters[rand(0, strlen($characters) - 1)];
++        }
++        return $randomString;
++    }
++}

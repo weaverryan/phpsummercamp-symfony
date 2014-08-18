@@ -1,0 +1,45 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "add-appbundle",
+            "name": "Add AppBundle",
+            "description": null
+        },
+        {
+            "id": "basic-page-with-yaml",
+            "name": "Basic Page: With YAML",
+            "description": null
+        },
+        {
+            "id": "basic-page-with-annotations",
+            "name": "Basic Page: with annotations",
+            "description": null
+        },
+        {
+            "id": "basic-page-render-template",
+            "name": "Basic Page: Render template",
+            "description": null
+        },
+        {
+            "id": "basic-page-move-template-into-app",
+            "name": "Basic Page: Move template into app\/",
+            "description": null
+        },
+        {
+            "id": "basic-page-override-title-block",
+            "name": "Basic Page: Override title block",
+            "description": null
+        },
+        {
+            "id": "service-create-and-use-randomgenerator",
+            "name": "Service: Create and use RandomGenerator",
+            "description": null
+        }
+    ],
+    "sha": "79b7ab9295edd73efe76d0305df70ed7fb8a9f54"
+}

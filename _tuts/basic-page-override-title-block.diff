@@ -1,0 +1,12 @@
+diff --git a/app/Resources/views/Random/index.html.twig b/app/Resources/views/Random/index.html.twig
+index aec367e..fe62fbd 100644
+--- a/app/Resources/views/Random/index.html.twig
++++ b/app/Resources/views/Random/index.html.twig
+@@ -1,5 +1,7 @@
+ {% extends 'base.html.twig' %}
+ 
++{% block title %}Randomness!{% endblock %}
++
+ {% block body %}
+     <h1>Number: {{ number }}</h1>
+ {% endblock %}

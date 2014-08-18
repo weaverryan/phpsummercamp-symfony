@@ -1,0 +1,28 @@
+diff --git a/app/AppKernel.php b/app/AppKernel.php
+index c35b166..321e707 100644
+--- a/app/AppKernel.php
++++ b/app/AppKernel.php
+@@ -16,6 +16,7 @@ class AppKernel extends Kernel
+             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
++            new AppBundle\AppBundle(),
+         );
+ 
+         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+diff --git a/src/AppBundle/AppBundle.php b/src/AppBundle/AppBundle.php
+new file mode 100644
+index 0000000..5cee960
+--- /dev/null
++++ b/src/AppBundle/AppBundle.php
+@@ -0,0 +1,10 @@
++<?php
++
++namespace AppBundle;
++
++use Symfony\Component\HttpKernel\Bundle\Bundle;
++
++class AppBundle extends Bundle
++{
++
++}

@@ -1,0 +1,35 @@
+diff --git a/app/Resources/views/Random/index.html.twig b/app/Resources/views/Random/index.html.twig
+new file mode 100644
+index 0000000..aec367e
+--- /dev/null
++++ b/app/Resources/views/Random/index.html.twig
+@@ -0,0 +1,5 @@
++{% extends 'base.html.twig' %}
++
++{% block body %}
++    <h1>Number: {{ number }}</h1>
++{% endblock %}
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index 2b58f0d..91facff 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -14,7 +14,7 @@ class RandomController extends Controller
+     {
+         $number = rand(1, $limit);
+ 
+-        return $this->render('AppBundle:Random:index.html.twig', array(
++        return $this->render('Random/index.html.twig', array(
+             'number' => $number
+         ));
+     }
+diff --git a/src/AppBundle/Resources/views/Random/index.html.twig b/src/AppBundle/Resources/views/Random/index.html.twig
+deleted file mode 100644
+index 7e6bb7b..0000000
+--- a/src/AppBundle/Resources/views/Random/index.html.twig
++++ /dev/null
+@@ -1,5 +0,0 @@
+-{% extends '::base.html.twig' %}
+-
+-{% block body %}
+-    <h1>Number: {{ number }}</h1>
+-{% endblock %}

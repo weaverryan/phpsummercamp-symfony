@@ -1,0 +1,35 @@
+diff --git a/app/config/routing.yml b/app/config/routing.yml
+index e69de29..8743259 100644
+--- a/app/config/routing.yml
++++ b/app/config/routing.yml
+@@ -0,0 +1,2 @@
++_app:
++    resource: "@AppBundle/Resources/config/routing.yml"
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+new file mode 100644
+index 0000000..22633ec
+--- /dev/null
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -0,0 +1,13 @@
++<?php
++
++namespace AppBundle\Controller;
++
++use Symfony\Component\HttpFoundation\Response;
++
++class RandomController
++{
++    public function indexAction($limit)
++    {
++        return new Response('<html><body>Number: '.rand(1, $limit).'</body></html>');
++    }
++}
+diff --git a/src/AppBundle/Resources/config/routing.yml b/src/AppBundle/Resources/config/routing.yml
+new file mode 100644
+index 0000000..aef25c5
+--- /dev/null
++++ b/src/AppBundle/Resources/config/routing.yml
+@@ -0,0 +1,3 @@
++random:
++    path:       /random/{limit}
++    defaults:   { _controller: "AppBundle:Random:index" }

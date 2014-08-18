@@ -1,0 +1,39 @@
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index a458d1a..2b58f0d 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -2,16 +2,20 @@
+ 
+ namespace AppBundle\Controller;
+ 
+-use Symfony\Component\HttpFoundation\Response;
++use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+ use Symfony\Component\Routing\Annotation\Route;
+ 
+-class RandomController
++class RandomController extends Controller
+ {
+     /**
+      * @Route("/random/{limit}")
+      */
+     public function indexAction($limit)
+     {
+-        return new Response('<html><body>Number: '.rand(1, $limit).'</body></html>');
++        $number = rand(1, $limit);
++
++        return $this->render('AppBundle:Random:index.html.twig', array(
++            'number' => $number
++        ));
+     }
+ }
+diff --git a/src/AppBundle/Resources/views/Random/index.html.twig b/src/AppBundle/Resources/views/Random/index.html.twig
+new file mode 100644
+index 0000000..7e6bb7b
+--- /dev/null
++++ b/src/AppBundle/Resources/views/Random/index.html.twig
+@@ -0,0 +1,5 @@
++{% extends '::base.html.twig' %}
++
++{% block body %}
++    <h1>Number: {{ number }}</h1>
++{% endblock %}
