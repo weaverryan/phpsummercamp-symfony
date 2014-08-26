@@ -1,0 +1,13 @@
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index c4b92a0..1086109 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -16,6 +16,8 @@ class RandomController extends Controller
+         $generator = $this->container->get('random_generator');
+         $string = $generator->generateString($limit);
+ 
++        $this->container->get('logger')->info('Random string is: '.$string);
++
+         return $this->render('Random/index.html.twig', array(
+             'string' => $string
+         ));

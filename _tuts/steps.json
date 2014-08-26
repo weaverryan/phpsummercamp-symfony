@@ -39,7 +39,27 @@
             "id": "service-create-and-use-randomgenerator",
             "name": "Service: Create and use RandomGenerator",
             "description": null
+        },
+        {
+            "id": "service-register-as-service",
+            "name": "Service: Register as service",
+            "description": null
+        },
+        {
+            "id": "service-use-logger-in-controller",
+            "name": "Service: Use logger in controller",
+            "description": null
+        },
+        {
+            "id": "service-try-using-this-container-in-service",
+            "name": "Service: Try using $this->container in service",
+            "description": null
+        },
+        {
+            "id": "service-di-logger-service",
+            "name": "Service: DI logger service",
+            "description": null
         }
     ],
-    "sha": "79b7ab9295edd73efe76d0305df70ed7fb8a9f54"
+    "sha": "e449f006037bcda359674736bc0f6c75e2827c2f"
 }
