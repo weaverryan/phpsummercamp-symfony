@@ -18,3 +18,9 @@ into the Twig template and render it.
 
 When you go to `http://sfbasics.ezsc/app_dev.php/random/5`, you
 will see a random string that is *5* characters in length.
+
+**EXTRA CREDIT**
+
+* Try moving this file into a different directory, like
+`Random` instead of `Service`. What else needs to change
+so that this keeps working?

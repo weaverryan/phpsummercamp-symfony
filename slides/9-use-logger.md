@@ -9,3 +9,8 @@ Reference: `http://bit.ly/1tCzAT3`
 
 When you refresh, you can click anywhere on the "web debug toolbar"
 and then click the "LOGS" panel on the left to see your message!
+
+**EXTRA CREDIT**
+
+* Play with the other methods of the logger object, like
+`error`, `warning` or `alert`.

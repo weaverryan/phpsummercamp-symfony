@@ -24,3 +24,10 @@ D) Add an `arguments` beneath the `class` key in `config.yml`:
 
 When you refresh, you should now be able to go and see the log message
 that you saw before.
+
+**EXTRA CREDIT**
+
+* Use the `container:debug` app/console command to figure out what
+the class is for the "logger" service. Then, add a "type hint" to the
+__construct function! What's the advantage to doing this?
+

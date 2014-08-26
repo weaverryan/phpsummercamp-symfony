@@ -13,3 +13,10 @@ from `app/config/routing.yml`
 Go to `http://sfbasics.ezsc/app_dev.php/random/5` and
 see the same random number as before. But now, the route
 is added via annotations!
+
+**EXTRA CREDIT**
+
+* Add a `requirement` to the `limit` so that if you go to
+`/app_dev.php/random/foo`, it won't match the route.
+
+* Make this route *only* match GET requests

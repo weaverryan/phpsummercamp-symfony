@@ -13,5 +13,8 @@ D) Instantiate the bundle in `app/AppKernel.php`
 Go to `http://sfbasics.ezsc/app_dev.php` and see a *nice*
 "no route found" error message.
 
-**ADVANCED EXERCISE**
+**EXTRA CREDIT**
 
+* Open up the `Bundle` class and find out *how* Symfony now
+knows a lot about or bundle, like what directory it lives in,
+what namespace it has, and what its "name" is.

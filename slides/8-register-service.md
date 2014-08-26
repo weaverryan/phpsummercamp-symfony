@@ -16,3 +16,9 @@ above link
 
 When you go to `http://sfbasics.ezsc/app_dev.php/random/5`, you
 still see the random string that is 5 characters long.
+
+**EXTRA CREDIT**
+
+* Most of `config.yml` is configuration for third party bundles.
+Look around at the configuration options at
+http://symfony.com/doc/current/reference/index.html

@@ -7,3 +7,4 @@ the `RandomGenerator::generateString()` method.
 
 ERROR! You should see an error, probably about no
 `get` method being defined. But why!?
+
