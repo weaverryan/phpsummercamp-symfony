@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Service\RandomGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,10 +13,11 @@ class RandomController extends Controller
      */
     public function indexAction($limit)
     {
-        $number = rand(1, $limit);
+        $generator = new RandomGenerator();
+        $string = $generator->generateString($limit);
 
         return $this->render('Random/index.html.twig', array(
-            'number' => $number
+            'string' => $string
         ));
     }
 }
