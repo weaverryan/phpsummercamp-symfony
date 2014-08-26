@@ -1,4 +1,5 @@
 #### Step 3: Annotation Routes
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Remove the route you added in `routing.yml`
 

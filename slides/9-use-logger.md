@@ -1,4 +1,5 @@
 #### Step 9: Use the logger
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) In `indexAction`, get the `logger` service and use it
 to log a message like "Random string is 5".

@@ -1,4 +1,5 @@
 #### Step 5: Move your template
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Move your `index.html.twig` template to
 `app/Resources/views/Random/index.html.twig`

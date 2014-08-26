@@ -1,4 +1,5 @@
 #### Step 4:  Render a Template
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Render a template that prints the random number
 

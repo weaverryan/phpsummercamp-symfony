@@ -1,4 +1,5 @@
 #### Step 8: Register a Service
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Register the new class a service in
 `app/config/config.yml`.

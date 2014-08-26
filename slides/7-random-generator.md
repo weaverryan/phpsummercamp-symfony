@@ -1,4 +1,5 @@
 #### Step 7: Random Generator Class
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Create new class at
 `src/AppBundle/Service/RandomGenerator.php`

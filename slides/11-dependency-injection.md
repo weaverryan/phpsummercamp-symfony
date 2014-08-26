@@ -1,4 +1,5 @@
 #### Step 11: Dependency Injection
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Create a "logger" property inside of `RandomGenerator`.
 

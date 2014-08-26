@@ -1,4 +1,5 @@
 #### Step 6: Override the Twig title block
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Override the `title` block in the `index.html.twig` template.
 

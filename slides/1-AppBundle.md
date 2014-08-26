@@ -1,4 +1,5 @@
 #### Step 1 - AppBundle!
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Create a `src/AppBundle/AppBundle.php` file
 

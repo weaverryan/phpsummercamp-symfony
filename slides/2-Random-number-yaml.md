@@ -1,4 +1,5 @@
 #### Step 2: Random Number! (in YAML)
+Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Create a Route and Controller that generates a random number
 
