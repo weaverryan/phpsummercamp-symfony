@@ -17,5 +17,6 @@ Go to `http://sfbasics.ezsc/app_dev.php` and see a *nice*
 **EXTRA CREDIT**
 
 * Open up the `Bundle` class and find out *how* Symfony now
-knows a lot about or bundle, like what directory it lives in,
-what namespace it has, and what its "name" is.
+knows a lot about our bundle, like what directory the bundle
+lives in, what namespace classes inside this bundle will have
+and what the "name" of the bundle is.

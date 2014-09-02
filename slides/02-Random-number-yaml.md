@@ -3,8 +3,9 @@ Stuck? No worries: http://bit.ly/summer-symfony
 
 A) Create a Route and Controller that generates a random number
 
-Follow along with *Step 1* and *Step 2* at:
-    http://bit.ly/1pYTnvD
+Follow along with *Step 1* and *Step 2* on the
+    "Creating Pages" chapter of Symfony's book:
+        http://bit.ly/1pYTnvD
 
 **GOAL**
 
@@ -17,5 +18,4 @@ see a random number.
 `/app_dev.php/random/foo`, it won't match the route.
 
 * Add another wildcard to the route - like `/random/{limit}/{name}`
-and also print out this name in your message.
-
+and also print out this name on the page.

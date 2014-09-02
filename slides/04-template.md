@@ -1,9 +1,9 @@
 #### Step 4:  Render a Template
 Stuck? No worries: http://bit.ly/summer-symfony
 
-A) Render a template that prints the random number
+A) Render a Twig template that prints the random number
 
-Follow along with *Step 3* at:
+Follow along with *Step 3* on the "Creating Pages" document:
     http://bit.ly/1pYTnvD
 
 **GOAL**
