@@ -59,7 +59,47 @@
             "id": "service-di-logger-service",
             "name": "Service: DI logger service",
             "description": null
+        },
+        {
+            "id": "command-create-basic-command",
+            "name": "Command: Create Basic Command",
+            "description": null
+        },
+        {
+            "id": "command-use-formatting",
+            "name": "Command: Use Formatting",
+            "description": null
+        },
+        {
+            "id": "command-ask-a-question",
+            "name": "Command: Ask a question",
+            "description": null
+        },
+        {
+            "id": "command-progress-bar",
+            "name": "Command: Progress Bar",
+            "description": null
+        },
+        {
+            "id": "twig-print-random-date",
+            "name": "Twig: Print Random Date",
+            "description": null
+        },
+        {
+            "id": "twig-basic-extension",
+            "name": "Twig: Basic Extension",
+            "description": null
+        },
+        {
+            "id": "twig-finish-extension",
+            "name": "Twig: Finish Extension",
+            "description": null
+        },
+        {
+            "id": "bundle-install-knptimebundle",
+            "name": "Bundle: Install KnpTimeBundle",
+            "description": null
         }
     ],
-    "sha": "e449f006037bcda359674736bc0f6c75e2827c2f"
+    "sha": "8d75dfa4d4f570aac8ac450b1a95b50f46db63ea"
 }
