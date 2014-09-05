@@ -14,7 +14,7 @@ class RandomController extends Controller
     {
         $number = rand(1, $limit);
 
-        return $this->render('AppBundle:Random:index.html.twig', array(
+        return $this->render('Random/index.html.twig', array(
             'number' => $number
         ));
     }
