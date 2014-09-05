@@ -2,6 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+services:
+    random_generator:
+        class: AppBundle\Service\RandomGenerator
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }

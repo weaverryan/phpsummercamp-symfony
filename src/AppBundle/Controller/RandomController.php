@@ -13,7 +13,7 @@ class RandomController extends Controller
      */
     public function indexAction($limit)
     {
-        $generator = new RandomGenerator();
+        $generator = $this->container->get('random_generator');
         $string = $generator->generateString($limit);
 
         return $this->render('Random/index.html.twig', array(
