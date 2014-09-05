@@ -2,6 +2,8 @@
 
 namespace AppBundle\Twig;
 
+use AppBundle\Util\DateUtil;
+
 class MyTwigExtension extends \Twig_Extension
 {
     public function getName()
@@ -18,6 +20,6 @@ class MyTwigExtension extends \Twig_Extension
 
     public function calculateAgo(\DateTime $dt)
     {
-        return 'HALLO!';
+        return DateUtil::ago($dt);
     }
 }
