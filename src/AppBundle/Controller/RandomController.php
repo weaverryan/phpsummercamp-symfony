@@ -16,8 +16,11 @@ class RandomController extends Controller
         $generator = $this->container->get('random_generator');
         $string = $generator->generateString($limit);
 
+        $randomDate = new \DateTime('-'.rand(0, 100).' minutes');
+
         return $this->render('Random/index.html.twig', array(
-            'string' => $string
+            'string' => $string,
+            'someDate' => $randomDate,
         ));
     }
 }

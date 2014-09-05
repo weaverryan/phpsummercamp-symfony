@@ -4,4 +4,6 @@
 
 {% block body %}
     <h1>Random String: {{ string }}</h1>
+
+    <p>Posted {{ someDate|date('Y-m-d H:i:s') }}</p>
 {% endblock %}
