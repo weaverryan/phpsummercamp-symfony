@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
+use Symfony\Component\Console\Helper\ProgressBar;
 
 class GreetCommand extends ContainerAwareCommand
 {
@@ -41,9 +42,20 @@ class GreetCommand extends ContainerAwareCommand
         $question = new Question('How many times? ', 10);
         $limit = $helper->ask($input, $output, $question);
 
-
         for ($i = 0; $i < $limit; $i++) {
             $output->writeln($text);
         }
+
+        $output->writeln('Starting progress bar!');
+        $progress = new ProgressBar($output, 100);
+        $progress->start();
+
+        for ($i = 0; $i < 100; $i++) {
+            usleep(10000);
+            $progress->advance();
+        }
+
+        $progress->finish();
+        $output->writeln('');
     }
 }
