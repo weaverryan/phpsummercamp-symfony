@@ -1,0 +1,56 @@
+diff --git a/app/Resources/views/Random/index.html.twig b/app/Resources/views/Random/index.html.twig
+index 7840fec..c91d2fd 100644
+--- a/app/Resources/views/Random/index.html.twig
++++ b/app/Resources/views/Random/index.html.twig
+@@ -5,5 +5,5 @@
+ {% block body %}
+     <h1>Random String: {{ string }}</h1>
+ 
+-    <p>Posted {{ someDate|date('Y-m-d H:i:s') }}</p>
++    <p>Posted {{ someDate|ago }}</p>
+ {% endblock %}
+diff --git a/app/config/config.yml b/app/config/config.yml
+index 0336149..a5e09ad 100644
+--- a/app/config/config.yml
++++ b/app/config/config.yml
+@@ -7,6 +7,11 @@ services:
+         class: AppBundle\Service\RandomGenerator
+         arguments: ["@logger"]
+ 
++    my_twig_extension:
++        class: AppBundle\Twig\MyTwigExtension
++        tags:
++            - { name: twig.extension }
++
+ framework:
+     #esi:             ~
+     #translator:      { fallback: "%locale%" }
+diff --git a/src/AppBundle/Twig/MyTwigExtension.php b/src/AppBundle/Twig/MyTwigExtension.php
+new file mode 100644
+index 0000000..ad8948a
+--- /dev/null
++++ b/src/AppBundle/Twig/MyTwigExtension.php
+@@ -0,0 +1,23 @@
++<?php
++
++namespace AppBundle\Twig;
++
++class MyTwigExtension extends \Twig_Extension
++{
++    public function getName()
++    {
++        return 'my_twig_extension';
++    }
++
++    public function getFilters()
++    {
++        return array(
++            new \Twig_SimpleFilter('ago', array($this, 'calculateAgo'))
++        );
++    }
++
++    public function calculateAgo(\DateTime $dt)
++    {
++        return 'HALLO!';
++    }
++}
