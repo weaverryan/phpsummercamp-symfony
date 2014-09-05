@@ -1,0 +1,28 @@
+diff --git a/app/Resources/views/Random/index.html.twig b/app/Resources/views/Random/index.html.twig
+index 9043a9c..7840fec 100644
+--- a/app/Resources/views/Random/index.html.twig
++++ b/app/Resources/views/Random/index.html.twig
+@@ -4,4 +4,6 @@
+ 
+ {% block body %}
+     <h1>Random String: {{ string }}</h1>
++
++    <p>Posted {{ someDate|date('Y-m-d H:i:s') }}</p>
+ {% endblock %}
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index c4b92a0..9aa3163 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -16,8 +16,11 @@ class RandomController extends Controller
+         $generator = $this->container->get('random_generator');
+         $string = $generator->generateString($limit);
+ 
++        $randomDate = new \DateTime('-'.rand(0, 100).' minutes');
++
+         return $this->render('Random/index.html.twig', array(
+-            'string' => $string
++            'string' => $string,
++            'someDate' => $randomDate,
+         ));
+     }
+ }
