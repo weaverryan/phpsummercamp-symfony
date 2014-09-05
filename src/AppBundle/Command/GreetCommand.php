@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\Question;
 
 class GreetCommand extends ContainerAwareCommand
 {
@@ -26,11 +27,15 @@ class GreetCommand extends ContainerAwareCommand
         $output->writeln('<comment>Saying Hello</comment>');
 
         $name = $input->getArgument('name');
-        if ($name) {
-            $text = 'Hello <info>'.$name.'</info>';
-        } else {
-            $text = 'Hello';
+
+        if (!$name) {
+            $helper = $this->getHelper('question');
+            $question = new Question('Please enter your name: ', 'Ivo');
+
+            $name = $helper->ask($input, $output, $question);
         }
+
+        $text = 'Hello <info>'.$name.'</info>';
 
         if ($input->getOption('yell')) {
             $text = strtoupper($text);
