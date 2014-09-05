@@ -23,9 +23,11 @@ class GreetCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $output->writeln('<comment>Saying Hello</comment>');
+
         $name = $input->getArgument('name');
         if ($name) {
-            $text = 'Hello '.$name;
+            $text = 'Hello <info>'.$name.'</info>';
         } else {
             $text = 'Hello';
         }
