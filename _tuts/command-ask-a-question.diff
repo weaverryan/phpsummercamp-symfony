@@ -1,0 +1,27 @@
+diff --git a/src/AppBundle/Command/GreetCommand.php b/src/AppBundle/Command/GreetCommand.php
+index 8a666b7..347db4e 100644
+--- a/src/AppBundle/Command/GreetCommand.php
++++ b/src/AppBundle/Command/GreetCommand.php
+@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputArgument;
+ use Symfony\Component\Console\Input\InputInterface;
+ use Symfony\Component\Console\Input\InputOption;
+ use Symfony\Component\Console\Output\OutputInterface;
++use Symfony\Component\Console\Question\Question;
+ 
+ class GreetCommand extends ContainerAwareCommand
+ {
+@@ -36,6 +37,13 @@ class GreetCommand extends ContainerAwareCommand
+             $text = strtoupper($text);
+         }
+ 
+-        $output->writeln($text);
++        $helper = $this->getHelper('question');
++        $question = new Question('How many times? ', 10);
++        $limit = $helper->ask($input, $output, $question);
++
++
++        for ($i = 0; $i < $limit; $i++) {
++            $output->writeln($text);
++        }
+     }
+ }
