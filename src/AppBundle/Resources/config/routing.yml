@@ -1,0 +1,3 @@
+random:
+    path:       /random/{limit}
+    defaults:   { _controller: "AppBundle:Random:index" }
