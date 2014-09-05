@@ -1,0 +1,39 @@
+diff --git a/app/config/config.yml b/app/config/config.yml
+index 3bb310a..0336149 100644
+--- a/app/config/config.yml
++++ b/app/config/config.yml
+@@ -5,6 +5,7 @@ imports:
+ services:
+     random_generator:
+         class: AppBundle\Service\RandomGenerator
++        arguments: ["@logger"]
+ 
+ framework:
+     #esi:             ~
+diff --git a/src/AppBundle/Service/RandomGenerator.php b/src/AppBundle/Service/RandomGenerator.php
+index e6eb044..497d07e 100644
+--- a/src/AppBundle/Service/RandomGenerator.php
++++ b/src/AppBundle/Service/RandomGenerator.php
+@@ -4,6 +4,13 @@ namespace AppBundle\Service;
+ 
+ class RandomGenerator
+ {
++    private $logger;
++
++    public function __construct($logger)
++    {
++        $this->logger = $logger;
++    }
++
+     public function generateString($length)
+     {
+         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+@@ -12,7 +19,7 @@ class RandomGenerator
+             $randomString .= $characters[rand(0, strlen($characters) - 1)];
+         }
+ 
+-        $this->container->get('logger')->info('Random string is: '.$randomString);
++        $this->logger->info('Random string is: '.$randomString);
+ 
+         return $randomString;
+     }

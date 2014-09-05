@@ -1,0 +1,28 @@
+diff --git a/app/config/config.yml b/app/config/config.yml
+index fcfde1a..3bb310a 100644
+--- a/app/config/config.yml
++++ b/app/config/config.yml
+@@ -2,6 +2,10 @@ imports:
+     - { resource: parameters.yml }
+     - { resource: security.yml }
+ 
++services:
++    random_generator:
++        class: AppBundle\Service\RandomGenerator
++
+ framework:
+     #esi:             ~
+     #translator:      { fallback: "%locale%" }
+diff --git a/src/AppBundle/Controller/RandomController.php b/src/AppBundle/Controller/RandomController.php
+index 72b4d40..c4b92a0 100644
+--- a/src/AppBundle/Controller/RandomController.php
++++ b/src/AppBundle/Controller/RandomController.php
+@@ -13,7 +13,7 @@ class RandomController extends Controller
+      */
+     public function indexAction($limit)
+     {
+-        $generator = new RandomGenerator();
++        $generator = $this->container->get('random_generator');
+         $string = $generator->generateString($limit);
+ 
+         return $this->render('Random/index.html.twig', array(
